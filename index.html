@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Document</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Coding Quiz Assessment</h1>
+      <p>
+        Note: This is a timed coding assessment. The time will start counting down after you click
+        the start button. Clicking on a question directs you to the next question. You can not 
+        return to previous questions. So answer cautiously! The game is over when the timer 
+        reaches 0 or you have answered all the questions. Be sure to save your scores with your 
+        initials to keep track of the highest score. Scoring is based on the highest time.
+      </p>
+      <p>
+        *Important: Answering the wrong question will reduce time by 10 seconds.*
+      </p>
+      <div>
+        <button type="button">Start Quiz</button>
+      </div>
+    </header>
+    
+    <section class="container">
+      <div id="question-card" class="hide"></div>
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-choices">
+          <button class="btn">A.</button>
+          <button class="btn">B.</button>
+          <button class="btn">C.</button>
+          <button class="btn">D.</button>
+        </div>
+      </section>
+    <script src="./script.js"></script>
+  </body>
 </html>
