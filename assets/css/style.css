@@ -1,23 +1,104 @@
-*, *::before, *::after {
+* {
   box-sizing: border-box;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 :root {
   --right-color: rgb(50, 223, 50);
   --wrong-color: rgb(255, 100, 89);
   --neutral: rgb(255, 255, 255);
-  --shadow-hover: rgb(190, 190, 190);
+  --shadow-active: rgb(190, 190, 190);
+  --h1-color: rgb(248, 219, 51);
+  --background-color: rgb(161, 134, 187);
+  --generic-color: rgb(0, 0, 0);
 
 
 }
 
 body {
-  padding: 0;
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
 }
+
+header {
+  border: 2px var(--generic-color) solid;
+  padding: 10px;
+  margin: 300px;
+  text-align: center;
+  line-height: 30px;
+  color: var(--generic-color);
+  background-color: var(--neutral);
+}
+header div h1 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+header div p {
+  padding: 10px 20px;
+}
+header div button {
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin: 10px;
+  text-decoration: none;
+  
+}
+header div button:active {
+  background: var(--shadow-active);
+}
+header div button:hover {
+  cursor: pointer;
+}
+header div button a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+.container {
+  border: 2px var(--generic-color) solid;
+  padding: 10px;
+  margin: 300px;
+  text-align: center;
+  line-height: 30px;
+  color: var(--generic-color);
+  background-color: var(--neutral);
+
+}
+.btn-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 10px;
+  
+}
+.btn {
+  padding: 5px;
+}
+.btn:active {
+  background: var(--shadow-active);
+}
+.btn:hover {
+  cursor: pointer;
+}
+
+
+
+.btn.correct {
+  background: var(--right-color);
+}
+.btn.incorrect {
+  background: var(--wrong-color);
+}
+
