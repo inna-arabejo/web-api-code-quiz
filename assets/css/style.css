@@ -26,7 +26,7 @@ body {
   background-color: var(--background-color);
 }
 
-header {
+section {
   border: 2px var(--generic-color) solid;
   padding: 10px;
   margin: 300px;
@@ -35,14 +35,14 @@ header {
   color: var(--generic-color);
   background-color: var(--neutral);
 }
-header div h1 {
+section div h1 {
   font-size: 30px;
   padding-bottom: 20px;
 }
-header div p {
+section div p {
   padding: 10px 20px;
 }
-header div button {
+section div button {
   padding: 10px;
   font-size: 20px;
   border-radius: 5px;
@@ -50,13 +50,13 @@ header div button {
   text-decoration: none;
   
 }
-header div button:active {
+section div button:active {
   background: var(--shadow-active);
 }
-header div button:hover {
+section div button:hover {
   cursor: pointer;
 }
-header div button a {
+section div button a {
   text-decoration: none;
 }
 
@@ -66,17 +66,43 @@ header div button a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section div h2 {
+  padding-bottom: 10px;
+}
+
+
+
+
+
 .container {
   border: 2px var(--generic-color) solid;
-  padding: 10px;
+  padding: 50px;
   margin: 300px;
-  text-align: center;
+  text-align: left;
   line-height: 30px;
   color: var(--generic-color);
   background-color: var(--neutral);
-
 }
-.btn-choices {
+.question-choices {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -85,6 +111,8 @@ header div button a {
 }
 .btn {
   padding: 5px;
+  text-align: left;
+  width: 75%;
 }
 .btn:active {
   background: var(--shadow-active);
@@ -102,3 +130,6 @@ header div button a {
   background: var(--wrong-color);
 }
 
+.hide {
+  display: none;
+}
