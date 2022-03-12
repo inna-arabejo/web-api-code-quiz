@@ -5,14 +5,16 @@ var choicesBtns = document.querySelectorAll(".choices");
 var questionH2 = document.querySelector(".question")
 var scoreDisplay = document.querySelector(".score");
 var countdownDisplay = document.querySelector("#countdown");
-var initialsSection = document.querySelector(".initials");
+var initialsSection = document.querySelector(".user-initials");
 var input = document.querySelector(".user-input");
 var submitBtn = document.querySelector(".submit");
-
+const mostRecentScore = localStorage.getItem("mostRecentScore");
+var HIGH_SCORES = document.querySelector("#high-scores");
 
 var currentIndex = 0;
 var score = 0;
 var countdown = 60;
+var NO_OF_HIGH_SCORES = 10;
 
 
 
@@ -129,9 +131,97 @@ function askInitials() {
   initialsSection.classList.add("active");
 }
 
-submitBtn.addEventListener("click", function() {
-  var userInitials = input.value;
-  console.log(userInitials);
 
-  saveHighScore(score, userInitials);
+submitBtn.addEventListener("click", function() {
+  var initials = input.value;
+  console.log(initials);
+
+  saveHighScore();
 })
+
+
+initialsSection.addEventListener("keyup", () => {
+  console.log(input.value)
+  submitBtn = input.value;
+})
+
+
+
+// function saveHighScore(score, initials) {
+  
+//   const scoresString = localStorage.getItem('userscores');
+  
+//   const highScores = JSON.parse(scoresString) || [];
+  
+//   const newScore = { 
+//     score: score, 
+//     initials: initials 
+//   }
+//   // Add to list
+//   highScores.push(newScore);
+  
+//   // Sort the list
+//   highScores.sort((a, b) => b.score - a.score);
+  
+//   // 3. Select new list
+//   highScores.splice(NO_OF_HIGH_SCORES);
+  
+  
+//   // Save to local storage
+//   localStorage.setItem('userscores', JSON.stringify(highScores));
+  
+//   console.log(localStorage)
+  
+// }
+
+// const highScoreString = localStorage.getItem(HIGH_SCORES);
+// const highScores = JSON.parse(highScoreString) || [];
+
+
+
+
+// function checkHighScore(score) {
+//   const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) || [];
+//   const lowestScore = highScores[NO_OF_HIGH_SCORES -1 ].score || 0;
+  
+//     if (score > lowestScore) {
+//       saveHighScore(score, highScores); // TODO
+//       showHighScores(); // TODO
+//     }
+//   }
+// highScores.map((score) => `<li>${score.score} — ${score.name}`);
+
+// const highScoreList = document.getElementById(HIGH_SCORES);
+
+// highScoreList.innerHTML = highScores.map((score) => 
+//   `<li>${score.score} - ${score.name}`
+// );
+
+// function showHighScores() {
+//   const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) || [];
+//   const highScoreList = document.getElementById(HIGH_SCORES);
+  
+//   highScoreList.innerHTML = highScores
+//     .map((score) => `<li>${score.score} - ${score.name}`)
+//     .join('');
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

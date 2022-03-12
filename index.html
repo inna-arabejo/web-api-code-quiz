@@ -10,7 +10,7 @@
 
     
     <header>
-      <a onclick="receiveScore()" href="#my-high-scores"><h3 id="high-score">View High Scores</h3></a>
+      <a href="#my-high-scores"><h3 id="high-scores">View High Scores</h3></a>
       <p>Score: <span class="score"></span></p>
       <h3>Countdown: <span id="countdown"></span></h3>
     </header>
@@ -37,12 +37,15 @@
           <button class="choices"></button>
           <button class="choices"></button>
         </div>
-        <div class="initials">
-          <h3>Game Over</h3>
-          <p>Please enter your initials</p>
-          <input class="user-input" type="text" placeholder="enter initials">
-          <button class="submit">Save</button>
-      </div>
+        <form>
+          <div class="user-initials">
+            <h3>Game Over</h3>
+            <p>Please Enter Your Initials</p>
+            <input class="user-input" type="text" placeholder="enter initials">
+            <button class="submit">Save Score</button>
+            <button class="home">Home</button>
+          </div>
+        </form>
       </section>
     
     <script src="./script.js"></script>

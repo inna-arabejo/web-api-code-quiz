@@ -38,6 +38,7 @@ section {
   line-height: 30px;
   color: var(--generic-color);
   background-color: var(--neutral);
+  
 }
 section div h1 {
   font-size: 30px;
@@ -52,7 +53,6 @@ section div button {
   border-radius: 5px;
   margin: 10px;
   text-decoration: none;
-  
 }
 section div button:active {
   background: var(--shadow-active);
@@ -62,6 +62,12 @@ section div button:hover {
 }
 section div button a {
   text-decoration: none;
+}
+
+section div button.choices {
+  display: block;
+  margin: 10px auto;
+  width: 25%;
 }
 
 .start {
@@ -80,10 +86,21 @@ section div button a {
     display: block;
 }
 
-.initials {
+.user-initials {
   display: none;
+  font-size: 20px;
 }
 
-.initials.active {
+.user-initials.active {
   display: block;
+}
+
+.user-input[type=text] {
+  padding: 10px;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.user-input[type=text]:focus {
+
 }
