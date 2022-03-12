@@ -56,7 +56,7 @@ startBtn.addEventListener("click", function() {
 
   scoreDisplay.textContent = score;
 
-  
+  startTimer();
   showQuestions();
 })
 
@@ -103,4 +103,19 @@ function nextQuestion() {
       })
 
   }
+}
+
+
+function startTimer() {
+  countdownDisplay.textContent = countdown;
+
+  var countdownTimer = setInterval(function() {
+      countdown--;
+      countdownDisplay.textContent = countdown;
+
+      if (countdown <= 0) {
+          clearInterval(countdownTimer)
+      }
+  }, 1000)
+
 }
