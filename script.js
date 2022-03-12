@@ -5,6 +5,7 @@ var choicesBtns = document.querySelectorAll(".choices");
 var questionH2 = document.querySelector(".question")
 var scoreDisplay = document.querySelector(".score");
 var countdownDisplay = document.querySelector("#countdown");
+var initialsSection = document.querySelector(".initials");
 
 
 var currentIndex = 0;
@@ -119,3 +120,16 @@ function startTimer() {
   }, 1000)
 
 }
+
+
+function askInitials() {
+  questionSection.classList.remove("active");
+  initialsSection.classList.add("active");
+}
+
+submitBtn.addEventListener("click", function() {
+  var userInitials = input.value;
+  console.log(userInitials);
+
+  saveHighScore(score, userInitials);
+})
