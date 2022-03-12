@@ -1,162 +1,68 @@
+var startSection = document.querySelector(".start");
+var startBtn = document.querySelector("#start-button");
+var questionSection = document.querySelector(".questions");
+var choicesBtns = document.querySelectorAll(".choices");
+var questionH2 = document.querySelector(".question")
 
-var quizContent = document.getElementById("#quiz-content")
-const startButton = document.getElementById("#start-button");
-const questionContainer = document.getElementById("#question-card");
-const questionEl = Array.from(document.querySelectorAll("#question-choices");
-var latestTime = document.querySelector("#latestTime");
-var wrap = document.querySelector("#wrap");
 
-var questionIdx = 0;
-var score = 0;
+var currentIndex = 0;
 
-var questionTypes = [
+
+
+
+
+
+
+var questions = [
   {
-    question: "",
-    choices: ["", "", "", ""],
-    answer: ""
+    question: "What kind of language is JavaScript?",
+    choices: ["Hypertext Markup Language", "Object-based", "Object-Oriented", "Cascading Style Sheet"],
+    answer: "Object-Oriented"
   },
   {
-    question: "",
-    choices: ["", "", "", ""],
-    answer: ""
+    question: "Which function is used to serialize an object into JSON string in JavaScript?",
+    choices: ["parse()", "stringify()", "array()", "parseInt()"],
+    answer: "stringify()"
   },
   {
-    question: "",
-    choices: ["", "", "", ""],
-    answer: ""
+    question: "Which of the following is a JavaScript framework?",
+    choices: ["Spark", "Django", "Spring", "React"],
+    answer: "React"
   },
   {
-    question: "",
-    choices: ["", "", "", ""],
-    answer: ""
+    question: "Which of the following are not server-side JavaScript objects?",
+    choices: ["Date", "FileUpload", "Function", "All of the above"],
+    answer: "All of the above"
   },
   {
-    question: "",
-    choices: ["", "", "", ""],
-    answer: ""
+    question: "Which of the following is not a method?",
+    choices: ["toLowerCase()", ".length", "push()", "sort()"],
+    answer: ".length"
   },
   {
-    question: "",
-    choices: ["", "", "", ""],
-    answer: ""
+    question: "Which of the following methods can be used to display data in some form using JavaScript?",
+    choices: ["document.write()", "console.log", "window.alert", "All of the above"],
+    answer: "All of the above"
   },
-
-];
-
-
+  
+]
 
 
-startButton.addEventListener("click", function(){
-  if(timeLeft === 0){
-    var timeInterval = setInterval(function(){
-      latestTime.textContent = "Timer: " + timeLeft;
-      timeLeft--;
-      
-      
-      if (timeLeft <= 0){
-        clearInterval(timeInterval);
-        latestTime.textContent = "Done!"
 
-        //timer reaches 0
-        countdown();
-      }
-    }, 1000);
-  }
-  render(questionIdx);
-});
+startBtn.addEventListener("click", function() {
 
+  startSection.classList.remove("active");
+  questionSection.classList.add("active");
 
-function render(questionIdx){
-  quizContent.innerHTML = "";
-  questionContainer.innerHTML = "";
   
 
-  for (let i = 0; i < questionType.length; i++){
-    let typeOfQuestion = questionTypes[questionIdx].question;
-    let typeOfChoices = questionTypes[questionIdx].choices;
-    quizContent.textContent = typeOfQuestion;
-  }
-
-  typeOfChoices.forEach(function (newChoices){
-    var listOfChoices = document.createElement
-  })
-}
-
-
-
-
-
-
-
-
-
-
-
-// first question is presented
-function questionStarts(){
-  resetState()
   
-}
+  showQuestions();
+})
+
+function showQuestions() {
+  questionH2.textContent = questions[currentIndex].question;
 
 
-
-//prompts another question
-function nextQuestion(question){
-  button.addEventListener("click", answerSelected)
-
-}
-  
-
-
-
-//answers question by clicking on it
-function answerSelected(e){
-  const selectedButton = e.target
-  const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
-  Array.from(answerButtonEl.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
 
 }
-
-
-//shows question is correct or incorrect
-function setStatusClass(element, correct){
-  clearStatusClass(element)
-  
-}
-
-
-function clearStatusClass(element){
-
-  
-}
-
-
-
-//answering the question incorrectly, reduces time by 10 seconds
-function timeReduced(){
-
-}
-
-
-//time reaches zero or questions are all answered
-
-//game is over
-function gameOver(){
-
-}
-
-
-//save the score with initials
-function saveScore(){
-
-}
-
-
-//Quiz resets and goes back to home page
-function resetState(){
-  
-}
-

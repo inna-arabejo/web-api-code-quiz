@@ -6,8 +6,7 @@
 }
 
 :root {
-  --right-color: rgb(50, 223, 50);
-  --wrong-color: rgb(255, 100, 89);
+  --text-color: rgb(61, 2, 110);
   --neutral: rgb(255, 255, 255);
   --shadow-active: rgb(190, 190, 190);
   --h1-color: rgb(248, 219, 51);
@@ -18,18 +17,23 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
   background-color: var(--background-color);
 }
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: var(--text-color);
+  font-size: 20px;
+  margin: 15px;
+}
+
 
 section {
   border: 2px var(--generic-color) solid;
   padding: 10px;
-  margin: 300px;
+  margin: 200px;
   text-align: center;
   line-height: 30px;
   color: var(--generic-color);
@@ -60,76 +64,19 @@ section div button a {
   text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-section div h2 {
-  padding-bottom: 10px;
-}
-
-
-
-
-
-.container {
-  border: 2px var(--generic-color) solid;
-  padding: 50px;
-  margin: 300px;
-  text-align: left;
-  line-height: 30px;
-  color: var(--generic-color);
-  background-color: var(--neutral);
-}
-.question-choices {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 20px 10px;
-  
-}
-.btn {
-  padding: 5px;
-  text-align: left;
-  width: 75%;
-}
-.btn:active {
-  background: var(--shadow-active);
-}
-.btn:hover {
-  cursor: pointer;
-}
-
-
-
-.btn.correct {
-  background: var(--right-color);
-}
-.btn.incorrect {
-  background: var(--wrong-color);
-}
-
-.hide {
+.start {
   display: none;
 }
+
+.start.active {
+  display: block;
+}
+
+.questions {
+    display: none;
+}
+
+.questions.active {
+    display: block;
+}
+

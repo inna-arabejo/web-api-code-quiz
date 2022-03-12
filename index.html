@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="html" href="./questions.html"/>
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Code Challenge</title>
   </head>
   <body>
 
     
-      <section id="wrap">
-        <div id="latestTime"></div>
-        <div id="quiz-content">
+    <header>
+      <a onclick="receiveScore()" href="#my-high-scores"><h3 id="high-score">View High Scores</h3></a>
+      <p>Score: <span class="score"></span></p>
+      <h3>Countdown: <span id="countdown"></span></h3>
+    </header>
+
+    <section  id="current-time">
+      <div class="start active">
           <h1>Coding Quiz Assessment</h1>
           <p>
             Note: This is a timed coding assessment. The time will start counting down after you click
@@ -25,13 +28,17 @@
           <p>
             *Important: Answering the wrong question will reduce time by 10 seconds.*
           </p>
-          <ul id="question-card"></ul>
           <button id="start-button">Start Quiz</button>
         </div>
+        <div class="questions">
+          <h2 class="question"></h2>
+          <button class="choices"></button>
+          <button class="choices"></button>
+          <button class="choices"></button>
+          <button class="choices"></button>
+      </div>
       </section>
     
     <script src="./script.js"></script>
-    
-    
   </body>
 </html>
