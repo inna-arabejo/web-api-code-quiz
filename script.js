@@ -6,6 +6,8 @@ var questionH2 = document.querySelector(".question")
 var scoreDisplay = document.querySelector(".score");
 var countdownDisplay = document.querySelector("#countdown");
 var initialsSection = document.querySelector(".initials");
+var input = document.querySelector(".user-input");
+var submitBtn = document.querySelector(".submit");
 
 
 var currentIndex = 0;

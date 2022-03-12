@@ -80,3 +80,10 @@ section div button a {
     display: block;
 }
 
+.initials {
+  display: none;
+}
+
+.initials.active {
+  display: block;
+}
