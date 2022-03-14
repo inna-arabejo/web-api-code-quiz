@@ -19,7 +19,7 @@
 body {
   background-color: var(--background-color);
 }
-
+/* Header for viewing high score, score, and timer*/
 header {
   display: flex;
   flex-flow: row nowrap;
@@ -29,7 +29,7 @@ header {
   margin: 15px;
 }
 
-
+/* Quiz content summary section */
 section {
   border: 2px var(--generic-color) solid;
   padding: 10px;
@@ -78,20 +78,22 @@ section div button.choices {
   display: block;
 }
 
+/* Questions section */
 .questions {
-    display: none;
+  display: none;
 }
 
 .questions.active {
-    display: block;
+  display: block;
 }
 
-.user-initials {
+/* Form section for user initials and score */
+.user {
   display: none;
   font-size: 20px;
 }
 
-.user-initials.active {
+.user.active {
   display: block;
 }
 
@@ -102,5 +104,15 @@ section div button.choices {
 }
 
 .user-input[type=text]:focus {
-
+ background-color: var(--shadow-active);
 }
+
+/* High scores section */
+.high-scores {
+  display: none;
+}
+
+.high-scores.active {
+  display: block;
+}
+

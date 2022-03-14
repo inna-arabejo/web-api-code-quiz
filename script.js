@@ -1,3 +1,4 @@
+// Variables
 var startSection = document.querySelector(".start");
 var startBtn = document.querySelector("#start-button");
 var questionSection = document.querySelector(".questions");
@@ -5,19 +6,20 @@ var choicesBtns = document.querySelectorAll(".choices");
 var questionH2 = document.querySelector(".question")
 var scoreDisplay = document.querySelector(".score");
 var countdownDisplay = document.querySelector("#countdown");
-var initialsSection = document.querySelector(".user-initials");
+var initialsSection = document.querySelector(".user");
 var input = document.querySelector(".user-input");
 var submitBtn = document.querySelector(".submit");
-const mostRecentScore = localStorage.getItem("mostRecentScore");
-var HIGH_SCORES = document.querySelector("#high-scores");
+var highscoreSection = document.querySelector(".high-scores");
+
 
 var currentIndex = 0;
 var score = 0;
 var countdown = 60;
 var NO_OF_HIGH_SCORES = 10;
+var HIGH_SCORES = 0;
 
 
-
+//Variables with questions listed.
 var questions = [
   {
     question: "What kind of language is JavaScript?",
@@ -53,7 +55,7 @@ var questions = [
 ]
 
 
-
+//Start button that shows question section.
 startBtn.addEventListener("click", function() {
 
   startSection.classList.remove("active");
@@ -65,6 +67,7 @@ startBtn.addEventListener("click", function() {
   showQuestions();
 })
 
+// Displays question with choices, score addition, and countdown penalty.
 function showQuestions() {
   questionH2.textContent = questions[currentIndex].question;
 
@@ -77,7 +80,7 @@ function showQuestions() {
             score++;
             scoreDisplay.textContent = score;
             nextQuestion();
-            // console.log(score);
+           
         } else {
             countdown -= 10;
         }
@@ -89,12 +92,11 @@ function showQuestions() {
 
 }
 
-
+//If there are no more questions, ask the initials. If not, keep asking next question.
 function nextQuestion() {
 
   if (currentIndex === (questions.length - 1)) {
-      console.log("no more questions")
-      // insert function to stop quiz
+      
       askInitials();
 
 
@@ -110,7 +112,7 @@ function nextQuestion() {
   }
 }
 
-
+//Start countdown timer. Once time ends, ask initials.
 function startTimer() {
   countdownDisplay.textContent = countdown;
 
@@ -120,91 +122,66 @@ function startTimer() {
 
       if (countdown <= 0) {
           clearInterval(countdownTimer)
+          askInitials();
       }
   }, 1000)
 
 }
 
-
+//Initials section 
 function askInitials() {
   questionSection.classList.remove("active");
   initialsSection.classList.add("active");
+
+  getScore();
+
+}
+
+//saves score with initials section
+submitBtn.addEventListener("click", function() {
+  var userInitials = input.value;
+  
+  initialsSection.classList.remove("active");
+  highscoreSection.classList.add("active");
+  
+  setScore(score, userInitials);
+})
+
+
+function setScore() {
+  
+  localStorage.setItem("highscore", score);
+  localStorage.setItem("userInitials", document.getElementById('user-input').value);
+
+  getScore();
+}
+
+function getScore() {
+  var scoreSummary = `
+  <h2>` + localStorage.getItem("userInitials") + `'s highscore: <h2>
+  <h1>` + localStorage.getItem("highscore") + `</h1>
+  
+  <button onclick="clearScore()">Reset Score</button><button onclick="resetGame()">Replay</button>`;
+
+  document.getElementById(".high-scores").innerHTML = scoreSummary;
+}
+
+function clearScore(){
+  localStorage.setItem("highscore", "");
+  localStorage.setItem("user-input", "");
+
 }
 
 
-submitBtn.addEventListener("click", function() {
-  var initials = input.value;
-  console.log(initials);
-
-  saveHighScore();
-})
-
-
-initialsSection.addEventListener("keyup", () => {
-  console.log(input.value)
-  submitBtn = input.value;
-})
 
 
 
-// function saveHighScore(score, initials) {
-  
-//   const scoresString = localStorage.getItem('userscores');
-  
-//   const highScores = JSON.parse(scoresString) || [];
-  
-//   const newScore = { 
-//     score: score, 
-//     initials: initials 
-//   }
-//   // Add to list
-//   highScores.push(newScore);
-  
-//   // Sort the list
-//   highScores.sort((a, b) => b.score - a.score);
-  
-//   // 3. Select new list
-//   highScores.splice(NO_OF_HIGH_SCORES);
-  
-  
-//   // Save to local storage
-//   localStorage.setItem('userscores', JSON.stringify(highScores));
-  
-//   console.log(localStorage)
-  
+// function setScore() {
+//   local
 // }
 
-// const highScoreString = localStorage.getItem(HIGH_SCORES);
-// const highScores = JSON.parse(highScoreString) || [];
 
 
-
-
-// function checkHighScore(score) {
-//   const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) || [];
-//   const lowestScore = highScores[NO_OF_HIGH_SCORES -1 ].score || 0;
-  
-//     if (score > lowestScore) {
-//       saveHighScore(score, highScores); // TODO
-//       showHighScores(); // TODO
-//     }
-//   }
-// highScores.map((score) => `<li>${score.score} — ${score.name}`);
-
-// const highScoreList = document.getElementById(HIGH_SCORES);
-
-// highScoreList.innerHTML = highScores.map((score) => 
-//   `<li>${score.score} - ${score.name}`
-// );
-
-// function showHighScores() {
-//   const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) || [];
-//   const highScoreList = document.getElementById(HIGH_SCORES);
-  
-//   highScoreList.innerHTML = highScores
-//     .map((score) => `<li>${score.score} - ${score.name}`)
-//     .join('');
-// }
 
 
 
