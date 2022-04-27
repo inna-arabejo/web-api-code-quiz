@@ -13,6 +13,7 @@ To take a timed quiz, the following requirements are met when:
 
 ## Screenshot
 ![Code quiz screenshot](./assets/images/code-quiz.jpg)
+![Code quiz screenshot](./assets/images/quiz.jpg)
 
 ## Link to the Final Page
 [Link to the final code quiz web page]https://inna-arabejo.github.io/web-api-code-quiz/
