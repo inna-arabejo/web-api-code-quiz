@@ -1,5 +1,7 @@
 # Timed Code Quiz
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
 ## Description
 As part of the interview process when you apply as a full-stack web developer, you might be given a coding assessment. This assessment consists of multiple-choice questions. The purpose of this quiz is to equip you with JavaScript fundamentals and help you familiarize some of the questions that could be asked at an interview.
 
