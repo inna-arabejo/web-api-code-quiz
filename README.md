@@ -23,7 +23,7 @@ This program can be run through a browser using the above link to the the deploy
 
 ## Screenshot
 ![Code quiz screenshot](./assets/images/code-quiz.jpg)
-![Code quiz](./assets/images/quiz.png)
+![Code quiz](./assets/images/quiz.jpg)
 
 ## Link to the Final Page
 [Link to the final code quiz web page](https://inna-arabejo.github.io/web-api-code-quiz/)
